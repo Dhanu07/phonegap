@@ -50,15 +50,20 @@
 			<h1>mobile application</h1>
 		</div>
         <div class="login-form">
-			<form>
+			<form id='registerform' onsubmit='event.preventDefault(): return validate();'>
 			<label>Username: </label>
 			<input text="text" id="username" required>
 			
 			<label>Password: </label>
 			<input text="password" id="password" required>
 			
-			<button type="submit">Login</button>
-			<button type="button" onclick="window.location.href=register.html'">Register now</button>
+			<label>Confirm Password</label>
+			<input text="password" id="Confirmpassword" required>
+			
+			<label>Email</label>
+			<input text="email" id="email" required>
+
+			<button type="button">Register now</button>
 			</form>
         </div>
     </div>
@@ -66,6 +71,16 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
+		
+		function validate(){
+		var password = document.getElemenatryById('password').value;
+		var confirmpassword = document.getElemenatryById('confirmpassword').value;
+		
+		if (password == confirmpassword){
+			//submittheform
+			window.location.href('index.html');
+		}
+	}
     </script>
 </body>
 
